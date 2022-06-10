@@ -4,8 +4,8 @@ import OpenClosedSign from './OpenClosedSign';
 
 function App() {
 // tracking the state with useState hooks:
-//LightSign should be a string that starts out as 'green'
-  const [LightSign, setLightSign] = useState('green');
+//zooIsOpen should be a boolean that starts out as 'true'
+  const [zooIsOpen, setZooIsOpen] = useState(true);
 //gorillaSize should be a number that starts out as 10
   const [gorillaSize, setGorillaSize] = useState(10);
 //lionSize should be a number that starts out as 10
@@ -39,7 +39,10 @@ function App() {
           </div>
         </div>
       </div>
+      <OpenClosedSign zooIsOpen={zooIsOpen} />
+      <button onClick={() => setZooIsOpen(!zooIsOpen)}>Toggle Zoo</button>
     </div>
+     
   );
 }
 
