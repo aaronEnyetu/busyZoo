@@ -1,6 +1,7 @@
 import { useState } from 'react'; 
 import './App.css';
 import OpenClosedSign from './OpenClosedSign';
+import AnimalList from './AnimalList';
 
 function App() {
 // tracking the state with useState hooks:
@@ -13,7 +14,30 @@ function App() {
 //animal parade should be an array of strings that starts out as [giraffe, antelope, buffalo, elephant, leopard, rhino, lion, gorilla, ostrich ]
   const [animals, setAnimals] = useState (['elephant', 'buffalo', 'rhino', 'leopard', 'ostrich']);
 
-  
+  function handleElephantClick() {
+    animals.push('elephant');
+    setAnimals(animals.slice());
+  }
+  function handleBuffaloClick() {
+    animals.push('buffalo');
+    setAnimals(animals.slice());
+  }
+  function handleRhinoClick() {
+    animals.push('rhino');
+    setAnimals(animals.slice());
+  }
+  function handleLeopardClick() {
+    animals.push('leopard');
+    setAnimals(animals.slice());
+  }
+  function handleOstrichClick() {
+    animals.push('ostrich');
+    setAnimals(animals.slice());
+  }
+  function handleRetireAnimal() {
+    animals.pop();
+    setAnimals(animals.slice());
+  }
 
   return (
     <div className="App">
@@ -41,6 +65,14 @@ function App() {
       </div>
       <OpenClosedSign zooIsOpen={zooIsOpen} />
       <button onClick={() => setZooIsOpen(!zooIsOpen)}>Toggle Zoo</button>
+
+      <AnimalList animals={animals} />
+      <button onClick={handleElephantClick}>Add Elephant</button>
+      <button onClick={handleBuffaloClick}>Add Buffalo</button>
+      <button onClick={handleRhinoClick}>Add Rhino</button>
+      <button onClick={handleLeopardClick}>Add Leopard</button>
+      <button onClick={handleOstrichClick}>Add Ostrich</button>
+      <button onClick={handleRetireAnimal}>Retire last animal</button>
     </div>
      
   );
