@@ -1,3 +1,7 @@
+body {
+  background-image: url("./zoo.jpg");
+  background-size: cover; background-repeat: no-repeat;
+}
 .App {
   text-align: center;
 }
