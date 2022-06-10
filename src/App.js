@@ -47,9 +47,9 @@ function App() {
           <img src="gorilla.png" width={10 * gorillaSize} />
           <div className='buttons'>
             {/* when you click this button, the gorilla's size in state should go up by one */}
-            <button onClick={() => setGorillaSize(gorillaSize + 1)}>Angry gorilla is charging up</button>
+            <button onClick={() => setGorillaSize(gorillaSize + 1)}>Growling gorilla is ready to charge</button>
             {/* when you click this button, the gorilla's size in state should go down by one */}
-            <button onClick={() => setGorillaSize(gorillaSize - 1)}>The gorilla is getting defeated</button>
+            <button onClick={() => setGorillaSize(gorillaSize - 1)}>Diminishing chances of surviving </button>
           </div>
         </div>
         <div className='wild'>
@@ -57,9 +57,9 @@ function App() {
           <img src="lion.jpg" width={10 * lionSize} />
           <div className="buttons">
             {/* when you click this button, the lion's size in state should go up by one */}
-            <button onClick={() => setLionSize(lionSize + 1)}>Angry lion is charging up</button>
+            <button onClick={() => setLionSize(lionSize + 1)}>Roaring lion is ready to pounce</button>
             {/* when you click this button, the gorilla's size in state should go down by one */}
-            <button onClick={() => setLionSize(lionSize - 1)}>The lion is getting defeated</button>
+            <button onClick={() => setLionSize(lionSize - 1)}>Diminishing chances of surviving </button>
           </div>
         </div>
       </div>
