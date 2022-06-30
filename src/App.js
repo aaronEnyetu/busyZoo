@@ -38,18 +38,26 @@ function App() {
     animals.pop();
     setAnimals(animals.slice());
   }
+  function handleShrinkGorillaClick() {
+    if (gorillaSize > 5) {
+      setGorillaSize(gorillaSize - 1);
+    }
+  }
 
   return (
     <div className="App">
+      <h5>Welcome to Zoo Adventures, the App for animal lovers</h5>
       <div className="fight">
         <div className='wild'>
           {/* the width of the gorilla should be ten times whatever the gorilla size is in state */}
-          <img src="gorilla.png" width={10 * gorillaSize} />
+          {/* <img src="gorilla.png" width={10 * gorillaSize} /> */}
+          <p style={{ fontSize: `${gorillaSize}px` }}>{gorillaSize > 5 ? <img src='./gorillaEating.png'/> : <img src='./gorillaHungry.png' />}</p>
           <div className='buttons'>
             {/* when you click this button, the gorilla's size in state should go up by one */}
-            <button onClick={() => setGorillaSize(gorillaSize + 1)}>Growling gorilla is ready to charge</button>
+            <button onClick={() => setGorillaSize(gorillaSize + 1)}>Free and feed the Gorilla</button>
             {/* when you click this button, the gorilla's size in state should go down by one */}
-            <button onClick={() => setGorillaSize(gorillaSize - 1)}>Diminishing chances of surviving </button>
+            {/* <button onClick={() => setGorillaSize(gorillaSize - 1)}>Lock the Gorilla in the cage </button> */}
+            <button onClick={handleShrinkGorillaClick}>Shrink Gorilla</button>
           </div>
         </div>
         <div className='wild'>
