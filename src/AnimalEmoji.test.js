@@ -46,3 +46,13 @@ test('if we pass an invalid animal to AnimalEmoji, it should render an empty div
   expect(ostrichElement).not.toBeInTheDocument();
 });
 
+test('if we pass an ostrich to AnimalEmoji, it renders an ostrich emoji', () => {
+  render(<>
+    <AnimalEmoji animal='ostrich'/>
+    <AnimalEmoji animal='ostrich'/>
+  </>
+  );
+  const ostrichElement = screen.getAllByText(/𓅦/i);
+  expect(ostrichElement.length).toBe(2);
+});
+
