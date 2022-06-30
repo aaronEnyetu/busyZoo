@@ -36,4 +36,13 @@ test('if we pass an ostrich to AnimalEmoji, it renders an ostrich emoji', () => 
   expect(ostrichElement).toBeInTheDocument();
 });
 
+test('if we pass an invalid animal to AnimalEmoji, it should render an empty div', () => {
+  render(<AnimalEmoji animal='lion'/>);
+  const ostrichElement = screen.queryByText(/𓅦|🐘|🐃| 🦏| 🐆/i);
+//getByText - blows up if it finds nothing
+//queryByText - returns null if it finds nothing
+//findByText - lets you do async stuff
+
+  expect(ostrichElement).not.toBeInTheDocument();
+});
 
