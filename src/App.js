@@ -3,6 +3,8 @@ import './App.css';
 import OpenClosedSign from './OpenClosedSign';
 import AnimalList from './AnimalList';
 
+import CustomButton from './CustomButton';
+
 function App() {
 // tracking the state with useState hooks:
 //zooIsOpen should be a boolean that starts out as 'true'
@@ -74,10 +76,10 @@ function App() {
           <p style={{ fontSize: `${gorillaSize}px` }}>{gorillaSize > 5 ? <img src='./gorillaEating.png'/> : <img src='./gorillaHungry.png' />}</p>
           <div className='buttons'>
             {/* when you click this button, the gorilla's size in state should go up by one */}
-            <button onClick={() => setGorillaSize(gorillaSize + 1)}>Free and feed the Gorilla</button>
+            <CustomButton onClick={() => setGorillaSize(gorillaSize + 1)}>Free and feed the Gorilla</CustomButton>
             {/* when you click this button, the gorilla's size in state should go down by one */}
             {/* <button onClick={() => setGorillaSize(gorillaSize - 1)}>Lock the Gorilla in the cage </button> */}
-            <button onClick={handleShrinkGorillaClick}>Shrink Gorilla</button>
+            <CustomButton onClick={handleShrinkGorillaClick}>Shrink Gorilla</CustomButton>
           </div>
         </div>
         <div className='wild'>
@@ -87,7 +89,7 @@ function App() {
             {/* when you click this button, the lion's size in state should go up by one */}
             <button onClick={() => setLionSize(lionSize + 1)}>Roaring lion is ready to pounce</button>
             {/* when you click this button, the gorilla's size in state should go down by one */}
-            <button onClick={() => setLionSize(lionSize - 1)}>Diminishing chances of surviving </button>
+            <CustomButton onClick={() => setLionSize(lionSize - 1)}>Diminishing chances of surviving </CustomButton>
           </div>
         </div>
       </div>
@@ -95,12 +97,12 @@ function App() {
       <button onClick={() => setZooIsOpen(!zooIsOpen)}>Toggle Zoo</button>
 
       <AnimalList animals={animals} />
-      <button onClick={handleElephantClick}>Add Elephant</button>
-      <button onClick={handleBuffaloClick}>Add Buffalo</button>
-      <button onClick={handleRhinoClick}>Add Rhino</button>
-      <button onClick={handleLeopardClick}>Add Leopard</button>
-      <button onClick={handleOstrichClick}>Add Ostrich</button>
-      <button onClick={handleRetireAnimal}>Retire last animal</button>
+      <CustomButton onClick={handleElephantClick}>Add Elephant</CustomButton>
+      <CustomButton onClick={handleBuffaloClick}>Add Buffalo</CustomButton>
+      <CustomButton onClick={handleRhinoClick}>Add Rhino</CustomButton>
+      <CustomButton onClick={handleLeopardClick}>Add Leopard</CustomButton>
+      <CustomButton onClick={handleOstrichClick}>Add Ostrich</CustomButton>
+      <CustomButton onClick={handleRetireAnimal}>Retire last animal</CustomButton>
     </div>
      
   );
