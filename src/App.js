@@ -10,7 +10,7 @@ import Main from './Main';
 
 function App() {
   return (
-    <Router className="App" style={{ backgroundImage: 'url(/images/background.jpg)' }}>
+    <Router className="App">
       <Switch>
         <Route exact path='/'>
           <Main />

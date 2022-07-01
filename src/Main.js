@@ -26,7 +26,7 @@ function App() {
     async function loadStuff() {
       const res = await fetch('https://pokedex-alchemy.herokuapp.com/api/pokedex?page=3&perPage=50');
       const people = await res.json();
-
+//eslint-disable-next-line
       console.log(people.results);
       setData(people.results);
     }
