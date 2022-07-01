@@ -14,6 +14,9 @@ function App() {
 //animal parade should be an array of strings that starts out as [giraffe, antelope, buffalo, elephant, leopard, rhino, lion, gorilla, ostrich ]
   const [animals, setAnimals] = useState (['elephant', 'buffalo', 'rhino', 'leopard', 'ostrich']);
 
+
+  const [zooName, setZooName] = useState('Zoo Adventures');
+
   function handleElephantClick() {
     animals.push('elephant');
     setAnimals(animals.slice());
@@ -46,7 +49,8 @@ function App() {
 
   return (
     <div className="App">
-      <h5>Welcome to Zoo Adventures, the App for animal lovers</h5>
+      <h5>Welcome to {zooName}, the App for animal lovers</h5>
+      <input onChange={e => setZooName(e.target.value)} placeholder='type zoo name here' />
       <div className="fight">
         <div className='wild'>
           {/* the width of the gorilla should be ten times whatever the gorilla size is in state */}

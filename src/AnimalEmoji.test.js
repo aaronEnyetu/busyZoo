@@ -52,7 +52,7 @@ test('if we pass an ostrich to AnimalEmoji, it renders an ostrich emoji', () => 
     <AnimalEmoji animal='ostrich'/>
   </>
   );
-  const ostrichElement = screen.getAllByText(/𓅦/i);
-  expect(ostrichElement.length).toBe(2);
+  const ostrichElements = screen.getAllByText(/𓅦/i);
+  expect(ostrichElements.length).toBe(2);
 });
 
