@@ -72,3 +72,10 @@ test('if the user types in the input, the zoo name should change to whatever the
   expect(afterTyping).toBeInTheDocument();
   
 });
+
+test('renders seel', async () => {
+  render(<App />);
+  const vaderElement = await screen.findByText(/seel/i);
+  expect(vaderElement).toBeInTheDocument();
+  
+});

@@ -1,4 +1,4 @@
-import { useState } from 'react'; 
+import { useEffect, useState } from 'react'; 
 import './App.css';
 import OpenClosedSign from './OpenClosedSign';
 import AnimalList from './AnimalList';
@@ -16,6 +16,19 @@ function App() {
 
 
   const [zooName, setZooName] = useState('Zoo Adventures');
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    async function loadStuff() {
+      const res = await fetch('https://pokedex-alchemy.herokuapp.com/api/pokedex?page=3&perPage=50');
+      const people = await res.json();
+
+      console.log(people.results);
+      setData(people.results);
+    }
+
+    loadStuff();
+  }, []);
 
   function handleElephantClick() {
     animals.push('elephant');
@@ -51,6 +64,9 @@ function App() {
     <div className="App">
       <h5>Welcome to {zooName}, the App for animal lovers</h5>
       <input onChange={e => setZooName(e.target.value)} placeholder='type zoo name here' />
+      {
+        data?.map((person, i) => <p key={person.pokemon + i}>{person.pokemon}</p>)
+      }
       <div className="fight">
         <div className='wild'>
           {/* the width of the gorilla should be ten times whatever the gorilla size is in state */}
